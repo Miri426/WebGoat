@@ -1,0 +1,1 @@
+ C:\Users\USER\Downloads\apache-maven-3.9.9-bin\apache-maven-3.9.9\bin\mvn org.owasp:dependency-check-maven:check
