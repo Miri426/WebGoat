@@ -1,0 +1,183 @@
+                    
+                    
+┌──────────────────┐
+│ 16 Code Findings │
+└──────────────────┘
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/challenges/challenge5/Assignment5.java[0
+  m                                                                                                                     
+   ❯❯❱ [1mjava.spring.security.injection.tainted-sql-string.tainted-sql-string[0m
+          User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL
+          strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL    
+          strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate   
+          data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe 
+          library.                                                                                            
+          Details: https://sg.run/9rzz                                                                        
+                                                                                                              
+           45┆ "select password from challenge_users where userid = '"
+           46┆     + username_login
+           47┆     + "' and password = '"
+           48┆     + password_login
+           49┆     + "'");
+   
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           50┆ ResultSet resultSet = statement.executeQuery();
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/cryptography/EncodingAssignment.java[0m 
+    ❯❱ [1mjava.lang.security.audit.tainted-session-from-http-request.tainted-session-from-http-request[0m
+          Detected input from a HTTPServletRequest going into a session command, like `setAttribute`. User    
+          input into such a command could lead to an attacker inputting malicious code into your session      
+          parameters, blurring the line between what's trusted and untrusted, and therefore leading to a trust
+          boundary violation. This could lead to programmers trusting unvalidated data. Instead, thoroughly   
+          sanitize user input before passing it into such function calls.                                     
+          Details: https://sg.run/QbDZ                                                                        
+                                                                                                              
+           39┆ request.getSession().setAttribute("basicAuth", basicAuth);
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java[0m  
+    ❯❱ [1mjava.lang.security.audit.crypto.use-of-md5.use-of-md5[0m
+          Detected MD5 hash algorithm which is considered insecure. MD5 is not collision resistant and is
+          therefore not suitable as a cryptographic signature. Use HMAC instead.                         
+          Details: https://sg.run/ryJn                                                                   
+                                                                                                         
+           [32m▶▶┆ Autofix ▶ [0m"SHA-512"
+           39┆ MessageDigest md = MessageDigest.getInstance("MD5");
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/jwt/claimmisuse/JWTHeaderJKUEndpoint.jav
+  [0m                                                                                                                   
+   ❯❯❱ [1mjava.spring.security.injection.tainted-url-host.tainted-url-host[0m
+          User data flows into the host portion of this manually-constructed URL. This could allow an attacker
+          to send data to their own server, potentially exposing sensitive data such as cookies or            
+          authorization information sent with this request. They could also probe internal servers or other   
+          resources that the server running this code can access. (This is called server-side request forgery,
+          or SSRF.) Do not allow arbitrary hosts. Instead, create an allowlist for approved hosts, hardcode   
+          the correct host, or ensure that the user data can only affect the path or parameters.              
+          Details: https://sg.run/vkYn                                                                        
+                                                                                                              
+           57┆ var jwkProvider = new JwkProviderBuilder(new URL(jku.asString())).build();
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUploadRetrieval.jav
+  [0m                                                                                                                   
+   ❯❯❱ [1mjava.lang.security.httpservlet-path-traversal.httpservlet-path-traversal[0m
+          Detected a potential path traversal. A malicious actor could control the location of this file, to
+          include going backwards in the directory with '../'. To address this, ensure that user-controlled 
+          variables in file paths are sanitized. You may also consider using a utility method such as       
+          org.apache.commons.io.FilenameUtils.getName(...) to only retrieve the file name from the path.    
+          Details: https://sg.run/oxXN                                                                      
+                                                                                                            
+          100┆ var catPicture =
+          101┆     new File(catPicturesDirectory, (id == null ? RandomUtils.nextInt(1, 11) : id) +
+               ".jpg");                                                                           
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionChalle
+  ge.java[0m                                                                                                            
+   ❯❯❱ [1mjava.spring.security.injection.tainted-sql-string.tainted-sql-string[0m
+          User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL
+          strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL    
+          strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate   
+          data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe 
+          library.                                                                                            
+          Details: https://sg.run/9rzz                                                                        
+                                                                                                              
+           55┆ "select userid from sql_challenge_users where userid = '" + username + "'";
+   
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           57┆ ResultSet resultSet = statement.executeQuery(checkUserQuery);
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLe
+  son10.java[0m                                                                                                         
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           56┆ ResultSet results = statement.executeQuery(query);
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLe
+  son5a.java[0m                                                                                                         
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           52┆ ResultSet results = statement.executeQuery(query);
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLe
+  son5b.java[0m                                                                                                         
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           69┆ ResultSet results = query.executeQuery();
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLe
+  son8.java[0m                                                                                                          
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           62┆ ResultSet results = statement.executeQuery(query);
+            ⋮┆----------------------------------------
+          142┆ statement.executeUpdate(logQuery);
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/introduction/SqlInjectionLe
+  son9.java[0m                                                                                                          
+   ❯❯❱ [1mjava.lang.security.audit.formatted-sql-string.formatted-sql-string[0m
+          Detected a formatted string in a SQL statement. This could lead to SQL injection if variables in the
+          SQL statement are not properly sanitized. Use a prepared statements (java.sql.PreparedStatement)    
+          instead. You can obtain a PreparedStatement using 'connection.prepareStatement'.                    
+          Details: https://sg.run/OPXp                                                                        
+                                                                                                              
+           65┆ statement.execute(queryInjection);
+                                                                                                                        
+  [36m[22m[24m                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/mitigation/Servers.java[0m 
+   ❯❯❱ [1mjava.spring.security.injection.tainted-sql-string.tainted-sql-string[0m
+          User data flows into this manually-constructed SQL string. User data can be safely inserted into SQL
+          strings using prepared statements or an object-relational mapper (ORM). Manually-constructed SQL    
+          strings is a possible indicator of SQL injection, which could let an attacker steal or manipulate   
+          data from the database. Instead, use prepared statements (`connection.PreparedStatement`) or a safe 
+          library.                                                                                            
+          Details: https://sg.run/9rzz                                                                        
+                                                                                                              
+           51┆ "select id, hostname, ip, mac, status, description from SERVERS where status <> 'out"
+           52┆     + " of order' order by "
+           53┆     + column)) {
+                                                                                                                
+  [36m[22m[24m  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/webwolf/FileServer.java[0m
+   ❯❯❱ [1mjava.spring.security.injection.tainted-file-path.tainted-file-path[0m
+          Detected user input controlling a file path. An attacker could control the location of this file, to
+          include going backwards in the directory with '../'. To address this, ensure that user-controlled   
+          variables in file paths are sanitized. You may also consider using a utility method such as         
+          org.apache.commons.io.FilenameUtils.getName(...) to only retrieve the file name from the path.      
+          Details: https://sg.run/x9o0                                                                        
+                                                                                                              
+           79┆ log.debug("File saved to {}", new File(destinationDir,
+               multipartFile.getOriginalFilename()));                

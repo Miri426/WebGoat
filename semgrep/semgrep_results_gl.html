@@ -1,0 +1,1047 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!-- This file was created with the aha Ansi HTML Adapter. https://github.com/theZiz/aha -->
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="application/xml+xhtml; charset=UTF-8"/>
+<title>stdin</title>
+</head>
+<body style="color:white; background-color:black">
+<pre>
+                    
+                    
+┌──────────────────┐
+│ 58 Code Findings │
+└──────────────────┘
+                                                                                                 
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/.mvn/wrapper/MavenWrapperDownloader.java</span>
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+           60┆ mavenWrapperPropertyFileInputStream = new FileInputStream(mavenWrapperPropertyFile);
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/it/java/org/owasp/webgoat/integration/CSRFIntegrationTest.java</span>           
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/z561                                                                        
+                                                                                                              
+           55┆ private static final String trickHTML8 =
+           56┆     &quot;&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body&gt;&lt;form action=\&quot;WEBGOATURL\&quot; method=\&quot;POST\&quot;&gt;\n&quot;
+           57┆         + &quot;&lt;input type=\&quot;hidden\&quot; name=\&quot;username\&quot; value=\&quot;csrf-USERNAME\&quot;/&gt;\n&quot;
+           58┆         + &quot;&lt;input type=\&quot;hidden\&quot; name=\&quot;password\&quot; value=\&quot;password\&quot;/&gt;\n&quot;
+           59┆         + &quot;&lt;input type=\&quot;hidden\&quot; name=\&quot;matchingPassword\&quot; value=\&quot;password\&quot;/&gt;\n&quot;
+           60┆         + &quot;&lt;input type=\&quot;hidden\&quot; name=\&quot;agree\&quot; value=\&quot;agree\&quot;/&gt;\n&quot;
+           61┆         + &quot;&lt;input type=\&quot;submit\&quot; value=\&quot;assignment 8\&quot;/&gt;\n&quot;
+           62┆         + &quot;&lt;/form&gt;&lt;/body&gt;&lt;/html&gt;&quot;;
+   
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+          100┆ if (webWolfFilePath.resolve(Paths.get(this.getUser(), htmlName)).toFile().exists()) {
+            ⋮┆----------------------------------------
+          101┆ Files.delete(webWolfFilePath.resolve(Paths.get(this.getUser(), htmlName)));
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/it/java/org/owasp/webgoat/integration/CryptoIntegrationTest.java</span>         
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/z561                                                                        
+                                                                                                              
+           75┆ String answer_1 = &quot;databasepassword&quot;;
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/it/java/org/owasp/webgoat/integration/LabelAndHintIntegrationTest.java</span>   
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+          168┆ new FileInputStream(&quot;src/main/resources/i18n/messages&quot; + lang + &quot;.properties&quot;)) {
+                                                                                                               
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/container/WebGoat.java</span>
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+           31┆ return new File(webgoatHome);
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/container/service/LabelDebugService.java</span>     
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           25┆ private static final String KEY_ENABLED = &quot;enabled&quot;;
+            ⋮┆----------------------------------------
+           26┆ private static final String KEY_SUCCESS = &quot;success&quot;;
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/challenges/SolutionConstants.java</span>    
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           10┆ String PASSWORD = &quot;!!webgoat_admin_1234!!&quot;;
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/challenges/challenge7/Assignment7.java                                                                                                                     
+    ❯❱ </span><span style="font-weight:bold;color:aqua;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           36┆ public static final String ADMIN_PASSWORD_LINK = &quot;375afe1104f4a487a73823c50a9292a2&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/z561                                                                        
+                                                                                                              
+           38┆ private static final String TEMPLATE =
+           39┆     &quot;Hi, you requested a password reset link, please use this &lt;a target='_blank'&quot;
+           40┆         + &quot; href='%s:8080/WebGoat/challenge/7/reset-password/%s'&gt;link&lt;/a&gt; to reset your&quot;
+           41┆         + &quot; password.\n&quot;
+           42┆         + &quot; \n\n&quot;
+           43┆         + &quot;If you did not request this password change you can ignore this message.\n&quot;
+           44┆         + &quot;If you have any comments or questions, please do not hesitate to reach us at&quot;
+           45┆         + &quot; support@webgoat-cloud.org\n\n&quot;
+           46┆         + &quot;Kind regards, \n&quot;
+           47┆         + &quot;Team WebGoat&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           62┆ if (link.equals(ADMIN_PASSWORD_LINK)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/cryptography/CryptoUtil.java</span>         
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-1</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/Y4yX                                                                        
+                                                                                                              
+          143┆ PKCS8EncodedKeySpec spec = new PKCS8EncodedKeySpec(decoded);
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/cryptography/HashingAssignment.java</span>  
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.WEAK_MESSAGE_DIGEST_MD5-1.WEAK_MESSAGE_DIGEST_SHA1-1</span>
+          The application was found using an insecure or risky digest or signature algorithm. Both MD5 and    
+          SHA1 hash algorithms have been found to be vulnerable to producing collisions. This means that two  
+          different values, when hashed, can lead to the same hash value. If the application is trying to use 
+          these hash methods for storing passwords, then it is recommended to switch to a password hashing    
+          algorithm such as Argon2id or PBKDF2. strongly recommended that a standard Digest algorithm be      
+          chosen instead as implementing a digest by hand is error-prone.                                     
+                                                                                                              
+          Example of creating a SHA-384 hash: ``` // Create a MessageDigest using the SHA-384 algorithm       
+          MessageDigest sha384Digest = MessageDigest.getInstance(&quot;SHA-384&quot;); // Call update with your data    
+          sha384Digest.update(input); // Only call digest once all data has been fed into the update          
+          sha384digest instance byte[] output = sha384Digest.digest(); // output base64 encoded version of the
+          hash System.out.println(&quot;hash: &quot; + Base64.getEncoder().encodeToString(output)); ```                 
+                                                                                                              
+          For more information on secure password storage see OWASP:                                          
+          https://cheatsheetseries.owasp.org/cheatsheets/Password_Storage_Cheat_Sheet.html                    
+          Details: https://sg.run/L2R7                                                                        
+                                                                                                              
+           39┆ MessageDigest md = MessageDigest.getInstance(&quot;MD5&quot;);
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           74┆ if (answer_pwd1.equals(md5Secret) &amp;&amp; answer_pwd2.equals(sha256Secret)) {
+            ⋮┆----------------------------------------
+           74┆ if (answer_pwd1.equals(md5Secret) &amp;&amp; answer_pwd2.equals(sha256Secret)) {
+            ⋮┆----------------------------------------
+           76┆ } else if (answer_pwd1.equals(md5Secret) || answer_pwd2.equals(sha256Secret)) {
+            ⋮┆----------------------------------------
+           76┆ } else if (answer_pwd1.equals(md5Secret) || answer_pwd2.equals(sha256Secret)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/cryptography/SecureDefaultsAssignment.ja
+  a</span>                                                                                                                  
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           32┆ if (secretFileName != null &amp;&amp; secretFileName.equals(&quot;default_secret&quot;)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/cryptography/XOREncodingAssignment.java                                                                                                                    
+    ❯❱ </span><span style="font-weight:bold;color:aqua;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           25┆ if (answer_pwd1 != null &amp;&amp; answer_pwd1.equals(&quot;databasepassword&quot;)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/hijacksession/cas/HijackSessionAuthentic
+  tionProvider.java</span>                                                                                                  
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PREDICTABLE_RANDOM-1</span>
+          Depending on the context, generating weak random numbers may expose cryptographic functions which   
+          rely on these numbers, to be exploitable. When generating numbers for sensitive values such as      
+          tokens, nonces, and cryptographic keys, it is recommended that the `DRBG` instance of `SecureRandom`
+          be used.                                                                                            
+                                                                                                              
+          Example using `DRBG` with `SecureRandom`: ``` public SecureRandom getSecureRandomDRBG() throws      
+          NoSuchAlgorithmException { // Use DRBG according to                                                 
+          http://nvlpubs.nist.gov/nistpubs/SpecialPublications/NIST.SP.800-90Ar1.pdf     return               
+          SecureRandom.getInstance(&quot;DRBG&quot;,             // Security strength in bits (default is 128)          
+          DrbgParameters.instantiation(256,                 // Set prediction resistance and re-seeding       
+          DrbgParameters.Capability.PR_AND_RESEED,                 // Set the personalization string          
+          (optional, not necessary)                 &quot;some_personalization_string&quot;.getBytes()             )    
+          ); } ```                                                                                            
+                                                                                                              
+          For more information on Java Cryptography see:                                                      
+          https://docs.oracle.com/en/java/javase/15/security/java-cryptography-architecture-jca-reference-    
+          guide.html                                                                                          
+          Details: https://sg.run/1kbD                                                                        
+                                                                                                              
+           25┆ private static long id = new Random().nextLong() &amp; Long.MAX_VALUE;
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/jwt/JWTRefreshEndpoint.java</span>          
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           45┆ public static final String PASSWORD = &quot;bm5nhSkxCXZkKRy4&quot;;
+            ⋮┆----------------------------------------
+           46┆ private static final String JWT_PASSWORD = &quot;bm5n3SkxCX4kKRy4&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           61┆ if (&quot;Jerry&quot;.equalsIgnoreCase(user) &amp;&amp; PASSWORD.equals(password)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/jwt/JWTVotesEndpoint.java</span>            
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.INSECURE_COOKIE-1</span>
+          The `Secure` attribute when set to `true` protects the cookie value from being being transmitted    
+          over clear text communication paths such as HTTP. By enabling this protection, the cookie will only 
+          be sent over HTTPS.                                                                                 
+                                                                                                              
+          Example of protecting a `Cookie`: ``` // Create an Secure cookie. Cookie someCookie = new           
+          Cookie(&quot;SomeCookieName&quot;, &quot;SomeValue&quot;); // Set Secure flag to true someCookie.setSecure(true); ```   
+                                                                                                              
+          For more information see:                                                                           
+          https://jakarta.ee/specifications/servlet/4.0/apidocs/javax/servlet/http/cookie#setSecure-boolean-  
+                                                                                                              
+          Session cookies should be configured with the following security directives:                        
+                                                                                                              
+          - [HTTPOnly](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies) -
+          [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) -         
+          [Secure](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies)      
+          Details: https://sg.run/pNER                                                                        
+                                                                                                              
+          114┆ Cookie cookie = new Cookie(&quot;access_token&quot;, token);
+          115┆ response.addCookie(cookie);
+            ⋮┆----------------------------------------
+          119┆ Cookie cookie = new Cookie(&quot;access_token&quot;, &quot;&quot;);
+          120┆ response.addCookie(cookie);
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/lessontemplate/SampleAttack.java</span>     
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           27┆ private static final String secretValue = &quot;secr37Value&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           46┆ if (secretValue.equals(param1)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/logging/LogBleedingTask.java</span>         
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           43┆ if (username.equals(&quot;Admin&quot;) &amp;&amp; password.equals(this.password)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/missingac/MissingFunctionAC.java</span>     
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           14┆ public static final String PASSWORD_SALT_SIMPLE = &quot;DeliberatelyInsecure1234&quot;;
+            ⋮┆----------------------------------------
+           15┆ public static final String PASSWORD_SALT_ADMIN = &quot;DeliberatelyInsecure1235&quot;;
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/passwordreset/ResetLinkAssignment.java                                                                                                                     
+    ❯❱ </span><span style="font-weight:bold;color:aqua;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/z561                                                                        
+                                                                                                              
+           43┆ private static final String VIEW_FORMATTER = &quot;lessons/passwordreset/templates/%s.html&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           44┆ static final String PASSWORD_TOM_9 =
+           45┆     &quot;somethingVeryRandomWhichNoOneWillEverTypeInAsPasswordForTom&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/z561                                                                        
+                                                                                                              
+           44┆ static final String PASSWORD_TOM_9 =
+           45┆     &quot;somethingVeryRandomWhichNoOneWillEverTypeInAsPasswordForTom&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           71┆ if (passwordTom.equals(PASSWORD_TOM_9)) {
+            ⋮┆----------------------------------------
+           73┆ } else if (passwordTom.equals(password)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUploadBase.java</span> 
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+           51┆ var uploadedFile = new File(uploadDirectory, fullName);
+            ⋮┆----------------------------------------
+           70┆ var uploadDirectory = new File(this.webGoatHomeDirectory, &quot;/PathTraversal/&quot; + username);
+            ⋮┆----------------------------------------
+          103┆ var profilePictureDirectory = new File(this.webGoatHomeDirectory, &quot;/PathTraversal/&quot; +
+               username);                                                                           
+            ⋮┆----------------------------------------
+          112┆ try (var inputStream = new FileInputStream(profileDirectoryFiles[0])) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileUploadRetrieval.jav
+  </span>                                                                                                                   
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+           54┆ this.catPicturesDirectory = new File(webGoatHomeDirectory, &quot;/PathTraversal/&quot; + &quot;/cats&quot;);
+   
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_OUT-1.PATH_TRAVERSAL_OUT-1</span>
+          A file is opened to write to its contents. The filename comes from an input parameter. If an       
+          unfiltered parameter is passed to this file API, files at an arbitrary filesystem location could be
+          modified. This rule identifies potential path traversal vulnerabilities. In many cases, the        
+          constructed file path cannot be controlled by the user.                                            
+          Details: https://sg.run/ALZ4                                                                       
+                                                                                                             
+           64┆ FileCopyUtils.copy(is, new FileOutputStream(new File(catPicturesDirectory, i + &quot;.jpg&quot;)));
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.asdf</span>
+          asdf                               
+          Details: https://semgrep.dev/s/Drqd
+                                             
+          101┆ new File(catPicturesDirectory, (id == null ? RandomUtils.nextInt(1, 11) : id) + &quot;.jpg&quot;);
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/pathtraversal/ProfileZipSlip.java</span>    
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+           67┆ var tmpZipDirectory = Files.createTempDirectory(username);
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/spoofcookie/SpoofCookieAssignment.java                                                                                                                     
+    ❯❱ </span><span style="font-weight:bold;color:aqua;">gitlab.find_sec_bugs.INSECURE_COOKIE-1</span>
+          The `Secure` attribute when set to `true` protects the cookie value from being being transmitted    
+          over clear text communication paths such as HTTP. By enabling this protection, the cookie will only 
+          be sent over HTTPS.                                                                                 
+                                                                                                              
+          Example of protecting a `Cookie`: ``` // Create an Secure cookie. Cookie someCookie = new           
+          Cookie(&quot;SomeCookieName&quot;, &quot;SomeValue&quot;); // Set Secure flag to true someCookie.setSecure(true); ```   
+                                                                                                              
+          For more information see:                                                                           
+          https://jakarta.ee/specifications/servlet/4.0/apidocs/javax/servlet/http/cookie#setSecure-boolean-  
+                                                                                                              
+          Session cookies should be configured with the following security directives:                        
+                                                                                                              
+          - [HTTPOnly](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies) -
+          [SameSite](https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Set-Cookie/SameSite) -         
+          [Secure](https://developer.mozilla.org/en-US/docs/Web/HTTP/Cookies#restrict_access_to_cookies)      
+          Details: https://sg.run/pNER                                                                        
+                                                                                                              
+           58┆ Cookie cookie = new Cookie(COOKIE_NAME, &quot;&quot;);
+           59┆ cookie.setMaxAge(0);
+           60┆ response.addCookie(cookie);
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-4</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/6kO6                                                                        
+                                                                                                              
+           72┆ if (!authPassword.isBlank() &amp;&amp; authPassword.equals(password)) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/sqlinjection/advanced/SqlInjectionLesson
+  b.java</span>                                                                                                             
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           42┆ String password = &quot;dave&quot;;
+   
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-3</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/z561                                                                        
+                                                                                                              
+           44┆ String query = &quot;SELECT password FROM user_system_data WHERE user_name = 'dave'&quot;;
+                                                                                                                    
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/ssrf/SSRFTask2.java</span>
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.URLCONNECTION_SSRF_FD-1</span>
+          Server-Side-Request-Forgery (SSRF) exploits backend systems that initiate requests to third parties.
+          If user input is used in constructing or sending these requests, an attacker could supply malicious 
+          data to force the request to other systems or modify request data to cause unwanted actions.        
+                                                                                                              
+          Ensure user input is not used directly in constructing URLs or URIs when initiating requests to     
+          third party systems from back end systems. Care must also be taken when constructing payloads using 
+          user input. Where possible restrict to known URIs or payloads. Consider using a server-side map     
+          where keys are used to return URLs such as `https://site/goto?key=1` where `{key: 1, url:           
+          'http://some.url/', key: 2, url: 'http://...'}`.                                                    
+                                                                                                              
+          If you must use user-supplied input for requesting URLs, it is strongly recommended that the HTTP   
+          client chosen allows you to customize and block certain IP ranges at the network level. By blocking 
+          RFC 1918 addresses or other network address ranges, you can limit the severity of a successful SSRF 
+          attack. Care must also be taken to block certain protocol or address formatting such as IPv6.       
+                                                                                                              
+          If you cannot block address ranges at the client level, you may want to run the HTTP client as a    
+          protected user, or in a protected network where you can apply IP Table or firewall rules to block   
+          access to dangerous addresses. Finally, if none of the above protections are available, you could   
+          also run a custom HTTP proxy and force all requests through it to handle blocking dangerous         
+          addresses.                                                                                          
+                                                                                                              
+          Example using a map to look up a key to be used in a HTTP request: ``` HashMap&lt;String, String&gt;      
+          lookupTable = new HashMap&lt;&gt;(); lookupTable.put(&quot;key1&quot;, &quot;https://example.com/&quot;);                     
+          lookupTable.put(&quot;key2&quot;, &quot;https://safeurl.com/&quot;); String userInput = request.getParameter(&quot;key&quot;);    
+                                                                                                              
+          // Create a CloseableHttpClient, ideally any requests issued should be done // out-of-band from the 
+          servlet request itself (such as using a separate thread/scheduler system) try (final                
+          CloseableHttpClient httpClient = HttpClients.createDefault()) {     // Lookup the value from our    
+          user input from our lookupTable     String value = lookupTable.getOrDefault(userInput,              
+          &quot;https://example.com/&quot;);     // Construct the url, with the hardcoded url and only pass in the value
+          from the lookupTable,     // not direct user input     final HttpGet httpget = new HttpGet(value);  
+          // Execute the request     CloseableHttpResponse clientResponse = httpClient.execute(httpget);      
+          // Read the response     byte[] responseData =                                                      
+          clientResponse.getEntity().getContent().readAllBytes();     // Handle the response     // ... } ``` 
+                                                                                                              
+          If using a map is not possible, the user-supplied input must be encoded prior to use, and never     
+          allow full URLs: ``` // Get user input String userInput = request.getParameter(&quot;key&quot;); // Encode the
+          string using java.net.URLEncoder with the UTF-8 character set String encodedString =                
+          java.net.URLEncoder.encode(userInput, StandardCharsets.UTF_8); // Create a CloseableHttpClient,     
+          ideally any requests issued should be done // out-of-band from the servlet request itself (such as  
+          using a separate thread/scheduler system) try (final CloseableHttpClient httpClient =               
+          HttpClients.createDefault()) {   // Construct the url, with the hardcoded url and only pass in the  
+          encoded value, never a full URL   final HttpGet httpget = new                                       
+          HttpGet(&quot;https://example.com/getId?key=&quot;+encodedString);   // Execute the request                   
+          CloseableHttpResponse clientResponse = httpClient.execute(httpget);   // Read the response   byte[] 
+          responseData = clientResponse.getEntity().getContent().readAllBytes();   // handle the response }   
+          ```                                                                                                 
+                                                                                                              
+          For more information on SSRF see OWASP: https://cheatsheetseries.owasp.org/cheatsheets/Server_Side_R
+          equest_Forgery_Prevention_Cheat_Sheet.html                                                          
+          Details: https://sg.run/Njl7                                                                        
+                                                                                                              
+           36┆ try (InputStream in = new URL(url).openStream()) {
+                                                                                                                        
+  <span style="color:aqua;">                                                                                                          
+  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/xxe/BlindSendFileAssignment.java</span>     
+   ❯❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.PATH_TRAVERSAL_IN-1</span>
+          A file is opened to read its content. The filename comes from an input parameter. If an unfiltered
+          parameter is passed to this file API, files from an arbitrary filesystem location could be read.  
+          This rule identifies potential path traversal vulnerabilities. In many cases, the constructed file
+          path cannot be controlled by the user.                                                            
+          Details: https://sg.run/R5KK                                                                      
+                                                                                                            
+           56┆ File targetDirectory = new File(webGoatHomeDirectory, &quot;/XXE/&quot; + user.getUsername());
+                                                                                                              
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/java/org/owasp/webgoat/lessons/xxe/User.java</span>
+    ❯❱ <span style="font-weight:bold;">gitlab.find_sec_bugs.HARD_CODE_KEY-2</span>
+          Cryptographic keys should not be kept in the source code. The source code can be widely shared in an
+          enterprise environment, and is certainly shared in open source. To be managed safely, passwords and 
+          secret keys should be stored in separate configuration files or keystores.                          
+          Details: https://sg.run/obGN                                                                        
+                                                                                                              
+           13┆ private String password = &quot;&quot;;
+                                                                                                               
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/resources/webgoat/static/js/libs/mode-java.js</span>
+    ❯❱ <span style="font-weight:bold;">gitlab.nodejs_scan.javascript-dos-rule-regex_dos</span>
+          Ensure that the regex used to compare with user supplied input is safe from regular expression
+          denial of service.                                                                            
+          Details: https://sg.run/JDyEZ                                                                 
+                                                                                                        
+          534┆ if (! /^\s+$/.test(line))
+            ⋮┆----------------------------------------
+          685┆ line = session.getLine(row);
+          686┆ var m = re.exec(line);
+                                                                                                                    
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/src/main/resources/webgoat/static/js/libs/underscore-min.js</span>
+    ❯❱ <span style="font-weight:bold;">gitlab.nodejs_scan.javascript-crypto-rule-node_insecure_random_generator</span>
+          This rule identifies use of cryptographically weak random number generators. Using cryptographically
+          weak random number generators like `crypto.pseudoRandomBytes()`  and `Math.random()` for security-  
+          critical tasks can expose systems to significant  vulnerabilities. Attackers might predict the      
+          generated random numbers, compromising  the integrity and confidentiality of cryptographic          
+          operations. This could lead to  breaches where sensitive data is accessed or manipulated,           
+          authentication mechanisms  are bypassed, or secure communications are intercepted, ultimately       
+          undermining the  security of the entire system or application.                                      
+                                                                                                              
+          Mitigation strategy: Replace the use of these cryptographically weak random number generators with  
+          `crypto.randomBytes()`, a method provided by Node.js's `crypto` module that  generates              
+          cryptographically secure random numbers. This method should be used  for all operations requiring   
+          secure randomness, such as generating keys, tokens,  or any cryptographic material.                 
+                                                                                                              
+          Secure Code Example: ``` const crypto = require('crypto'); const secureBytes =                      
+          crypto.randomBytes(256); console.log(`Secure random bytes: ${secureBytes.toString('hex')}`); ```    
+          Details: https://sg.run/eq7DE                                                                       
+                                                                                                              
+            6┆ var n=&quot;object&quot;==typeof self&amp;&amp;self.self===self&amp;&amp;self||&quot;object&quot;==typeof                      
+               global&amp;&amp;global.global===global&amp;&amp;global||Function(&quot;return                                   
+               this&quot;)()||{},e=Array.prototype,i=Object.prototype,p=&quot;undefined&quot;!=typeof Symbol?Symbol.proto
+               type:null,u=e.push,f=e.slice,s=i.toString,o=i.hasOwnProperty,r=Array.isArray,a=Object.keys,
+               t=Object.create,c=n.isNaN,l=n.isFinite,v=function(){};function h(n){return n instanceof    
+               h?n:this instanceof h?void(this._wrapped=n):new h(n)}var g=h.VERSION=&quot;1.10.2&quot;;function     
+               y(u,o,n){if(void 0===o)return u;switch(null==n?3:n){case 1:return function(n){return       
+               u.call(o,n)};case 3:return function(n,r,t){return u.call(o,n,r,t)};case 4:return           
+               function(n,r,t,e){return u.call(o,n,r,t,e)}}return function(){return                       
+               u.apply(o,arguments)}}function d(n,r,t){return                                             
+               null==n?ur:Cn(n)?y(n,r,t):Ln(n)&amp;&amp;!Kn(n)?ir(n):or(n)}function m(n,r){return                 
+               d(n,r,1/0)}function b(n,r,t){return h.iteratee!==m?h.iteratee(n,r):d(n,r,t)}function       
+               j(u,o){return o=null==o?u.length-1:+o,function(){for(var                                   
+               n=Math.max(arguments.length-o,0),r=Array(n),t=0;t&lt;n;t++)r[t]=arguments[t+o];switch(o){case 
+               0:return u.call(this,r);case 1:return u.call(this,arguments[0],r);case 2:return            
+               u.call(this,arguments[0],arguments[1],r)}var                                               
+               e=Array(o+1);for(t=0;t&lt;o;t++)e[t]=arguments[t];return e[o]=r,u.apply(this,e)}}function     
+               _(n){if(!Ln(n))return{};if(t)return t(n);v.prototype=n;var r=new v;return                  
+               v.prototype=null,r}function w(r){return function(n){return null==n?void 0:n[r]}}function   
+               x(n,r){return null!=n&amp;&amp;o.call(n,r)}function S(n,r){for(var                                 
+               t=r.length,e=0;e&lt;t;e++){if(null==n)return;n=n[r[e]]}return t?n:void 0}h.iteratee=m;var     
+               A=Math.pow(2,53)-1,O=w(&quot;length&quot;);function M(n){var r=O(n);return&quot;number&quot;==typeof           
+               r&amp;&amp;0&lt;=r&amp;&amp;r&lt;=A}function E(n,r,t){var                                                        
+               e,u;if(r=y(r,t),M(n))for(e=0,u=n.length;e&lt;u;e++)r(n[e],e,n);else{var                       
+               o=Sn(n);for(e=0,u=o.length;e&lt;u;e++)r(n[o[e]],o[e],n)}return n}function                     
+               N(n,r,t){r=b(r,t);for(var e=!M(n)&amp;&amp;Sn(n),u=(e||n).length,o=Array(u),i=0;i&lt;u;i++){var       
+               a=e?e[i]:i;o[i]=r(n[a],a,n)}return o}function k(f){return function(n,r,t,e){var            
+               u=3&lt;=arguments.length;return function(n,r,t,e){var                                         
+               u=!M(n)&amp;&amp;Sn(n),o=(u||n).length,i=0&lt;f?0:o-1;for(e||(t=n[u?u[i]:i],i+=f);0&lt;=i&amp;&amp;i&lt;o;i+=f){var 
+               a=u?u[i]:i;t=r(t,n[a],a,n)}return t}(n,y(r,e,4),t,u)}}var I=k(1),T=k(-1);function          
+               B(n,r,t){var e=(M(n)?on:Tn)(n,r,t);if(void 0!==e&amp;&amp;-1!==e)return n[e]}function R(n,e,r){var 
+               u=[];return e=b(e,r),E(n,function(n,r,t){e(n,r,t)&amp;&amp;u.push(n)}),u}function                  
+               F(n,r,t){r=b(r,t);for(var e=!M(n)&amp;&amp;Sn(n),u=(e||n).length,o=0;o&lt;u;o++){var                  
+               i=e?e[o]:o;if(!r(n[i],i,n))return!1}return!0}function q(n,r,t){r=b(r,t);for(var            
+               e=!M(n)&amp;&amp;Sn(n),u=(e||n).length,o=0;o&lt;u;o++){var                                            
+               i=e?e[o]:o;if(r(n[i],i,n))return!0}return!1}function D(n,r,t,e){return                     
+               M(n)||(n=On(n)),(&quot;number&quot;!=typeof t||e)&amp;&amp;(t=0),0&lt;=ln(n,r,t)}var W=j(function(n,t,e){var    
+               u,o;return Cn(t)?o=t:Kn(t)&amp;&amp;(u=t.slice(0,-1),t=t[t.length-1]),N(n,function(n){var          
+               r=o;if(!r){if(u&amp;&amp;u.length&amp;&amp;(n=S(n,u)),null==n)return;r=n[t]}return                         
+               null==r?r:r.apply(n,e)})});function z(n,r){return N(n,or(r))}function P(n,e,r){var         
+               t,u,o=-1/0,i=-1/0;if(null==e||&quot;number&quot;==typeof e&amp;&amp;&quot;object&quot;!=typeof n[0]&amp;&amp;null!=n)for(var   
+               a=0,f=(n=M(n)?n:On(n)).length;a&lt;f;a++)null!=(t=n[a])&amp;&amp;o&lt;t&amp;&amp;(o=t);else                      
+               e=b(e,r),E(n,function(n,r,t){u=e(n,r,t),(i&lt;u||u===-1/0&amp;&amp;o===-1/0)&amp;&amp;(o=n,i=u)});return      
+               o}function K(n,r,t){if(null==r||t)return M(n)||(n=On(n)),n[ar(n.length-1)];var             
+               e=M(n)?Dn(n):On(n),u=O(e);r=Math.max(Math.min(r,u),0);for(var o=u-1,i=0;i&lt;r;i++){var       
+               a=ar(i,o),f=e[i];e[i]=e[a],e[a]=f}return e.slice(0,r)}function L(i,r){return               
+               function(e,u,n){var o=r?[[],[]]:{};return u=b(u,n),E(e,function(n,r){var                   
+               t=u(n,r,e);i(o,n,t)}),o}}var V=L(function(n,r,t){x(n,t)?n[t].push(r):n[t]=[r]}),C=L(functio
+               n(n,r,t){n[t]=r}),J=L(function(n,r,t){x(n,t)?n[t]++:n[t]=1}),U=/[^\ud800-\udfff]|[\ud800-  
+               \udbff][\udc00-\udfff]|[\ud800-\udfff]/g;var                                               
+               $=L(function(n,r,t){n[t?0:1].push(r)},!0);function G(n,r,t){return                         
+               null==n||n.length&lt;1?null==r?void 0:[]:null==r||t?n[0]:H(n,n.length-r)}function             
+               H(n,r,t){return f.call(n,0,Math.max(0,n.length-(null==r||t?1:r)))}function Q(n,r,t){return 
+               f.call(n,null==r||t?1:r)}function X(n,r,t,e){for(var                                       
+               u=(e=e||[]).length,o=0,i=O(n);o&lt;i;o++){var a=n[o];if(M(a)&amp;&amp;(Kn(a)||Vn(a)))if(r)for(var     
+               f=0,c=a.length;f&lt;c;)e[u++]=a[f++];else X(a,r,t,e),u=e.length;else t||(e[u++]=a)}return     
+               e}var Y=j(function(n,r){return rn(n,r)});function                                          
+               Z(n,r,t,e){er(r)||(e=t,t=r,r=!1),null!=t&amp;&amp;(t=b(t,e));for(var                               
+               u=[],o=[],i=0,a=O(n);i&lt;a;i++){var f=n[i],c=t?t(f,i,n):f;r&amp;&amp;!t?(i&amp;&amp;o===c||u.push(f),o=c):t?D
+               (o,c)||(o.push(c),u.push(f)):D(u,f)||u.push(f)}return u}var nn=j(function(n){return        
+               Z(X(n,!0,!0))});var rn=j(function(n,r){return                                              
+               r=X(r,!0,!0),R(n,function(n){return!D(r,n)})});function tn(n){for(var                      
+               r=n&amp;&amp;P(n,O).length||0,t=Array(r),e=0;e&lt;r;e++)t[e]=z(n,e);return t}var en=j(tn);function    
+               un(o){return function(n,r,t){r=b(r,t);for(var                                              
+               e=O(n),u=0&lt;o?0:e-1;0&lt;=u&amp;&amp;u&lt;e;u+=o)if(r(n[u],u,n))return u;return-1}}var                    
+               on=un(1),an=un(-1);function fn(n,r,t,e){for(var u=(t=b(t,e,1))(r),o=0,i=O(n);o&lt;i;){var     
+               a=Math.floor((o+i)/2);t(n[a])&lt;u?o=a+1:i=a}return o}function cn(o,i,a){return               
+               function(n,r,t){var e=0,u=O(n);if(&quot;number&quot;==typeof                                         
+               t)0&lt;o?e=0&lt;=t?t:Math.max(t+u,e):u=0&lt;=t?Math.min(t+1,u):t+u+1;else if(a&amp;&amp;t&amp;&amp;u)return         
+               n[t=a(n,r)]===r?t:-1;if(r!=r)return                                                        
+               0&lt;=(t=i(f.call(n,e,u),tr))?t+e:-1;for(t=0&lt;o?e:u-1;0&lt;=t&amp;&amp;t&lt;u;t+=o)if(n[t]===r)return        
+               t;return-1}}var ln=cn(1,on,fn),pn=cn(-1,an);function sn(n,r,t,e,u){if(!(e instanceof       
+               r))return n.apply(t,u);var o=_(n.prototype),i=n.apply(o,u);return Ln(i)?i:o}var            
+               vn=j(function(r,t,e){if(!Cn(r))throw new TypeError(&quot;Bind must be called on a function&quot;);var
+               u=j(function(n){return sn(r,u,t,this,e.concat(n))});return u}),hn=j(function(u,o){var      
+               i=hn.placeholder,a=function(){for(var n=0,r=o.length,t=Array(r),e=0;e&lt;r;e++)t[e]=o[e]===i?a
+               rguments[n++]:o[e];for(;n&lt;arguments.length;)t.push(arguments[n++]);return                  
+               sn(u,a,this,this,t)};return a});hn.placeholder=h;var gn=j(function(n,r){var                
+               t=(r=X(r,!1,!1)).length;if(t&lt;1)throw new Error(&quot;bindAll must be passed function            
+               names&quot;);for(;t--;){var e=r[t];n[e]=vn(n[e],n)}});var yn=j(function(n,r,t){return           
+               setTimeout(function(){return n.apply(null,t)},r)}),dn=hn(yn,h,1);function mn(n){return     
+               function(){return!n.apply(this,arguments)}}function bn(n,r){var t;return function(){return 
+               0&lt;--n&amp;&amp;(t=r.apply(this,arguments)),n&lt;=1&amp;&amp;(r=null),t}}var jn=hn(bn,2),_n=!{toString:null}.pr
+               opertyIsEnumerable(&quot;toString&quot;),wn=[&quot;valueOf&quot;,&quot;isPrototypeOf&quot;,&quot;toString&quot;,&quot;propertyIsEnumerab
+               le&quot;,&quot;hasOwnProperty&quot;,&quot;toLocaleString&quot;];function xn(n,r){var t=wn.length,e=n.constructor,u=C
+               n(e)&amp;&amp;e.prototype||i,o=&quot;constructor&quot;;for(x(n,o)&amp;&amp;!D(r,o)&amp;&amp;r.push(o);t--;)(o=wn[t])in       
+               n&amp;&amp;n[o]!==u[o]&amp;&amp;!D(r,o)&amp;&amp;r.push(o)}function Sn(n){if(!Ln(n))return[];if(a)return a(n);var  
+               r=[];for(var t in n)x(n,t)&amp;&amp;r.push(t);return _n&amp;&amp;xn(n,r),r}function                        
+               An(n){if(!Ln(n))return[];var r=[];for(var t in n)r.push(t);return _n&amp;&amp;xn(n,r),r}function   
+               On(n){for(var r=Sn(n),t=r.length,e=Array(t),u=0;u&lt;t;u++)e[u]=n[r[u]];return e}function     
+               Mn(n){for(var r={},t=Sn(n),e=0,u=t.length;e&lt;u;e++)r[n[t[e]]]=t[e];return r}function        
+               En(n){var r=[];for(var t in n)Cn(n[t])&amp;&amp;r.push(t);return r.sort()}function Nn(f,c){return  
+               function(n){var r=arguments.length;if(c&amp;&amp;(n=Object(n)),r&lt;2||null==n)return n;for(var       
+               t=1;t&lt;r;t++)for(var e=arguments[t],u=f(e),o=u.length,i=0;i&lt;o;i++){var a=u[i];c&amp;&amp;void       
+               0!==n[a]||(n[a]=e[a])}return n}}var kn=Nn(An),In=Nn(Sn);function Tn(n,r,t){r=b(r,t);for(var
+               e,u=Sn(n),o=0,i=u.length;o&lt;i;o++)if(r(n[e=u[o]],e,n))return e}function Bn(n,r,t){return r  
+               in t}var Rn=j(function(n,r){var t={},e=r[0];if(null==n)return                              
+               t;Cn(e)?(1&lt;r.length&amp;&amp;(e=y(e,r[1])),r=An(n)):(e=Bn,r=X(r,!1,!1),n=Object(n));for(var        
+               u=0,o=r.length;u&lt;o;u++){var i=r[u],a=n[i];e(a,i,n)&amp;&amp;(t[i]=a)}return                        
+               t}),Fn=j(function(n,t){var r,e=t[0];return Cn(e)?(e=mn(e),1&lt;t.length&amp;&amp;(r=t[1])):(t=N(X(t,!1
+               ,!1),String),e=function(n,r){return!D(t,r)}),Rn(n,e,r)}),qn=Nn(An,!0);function Dn(n){return
+               Ln(n)?Kn(n)?n.slice():kn({},n):n}function Wn(n,r){var                                      
+               t=Sn(r),e=t.length;if(null==n)return!e;for(var u=Object(n),o=0;o&lt;e;o++){var                
+               i=t[o];if(r[i]!==u[i]||!(i in u))return!1}return!0}function zn(n,r,t,e){if(n===r)return    
+               0!==n||1/n==1/r;if(null==n||null==r)return!1;if(n!=n)return r!=r;var u=typeof              
+               n;return(&quot;function&quot;===u||&quot;object&quot;===u||&quot;object&quot;==typeof r)&amp;&amp;function(n,r,t,e){n instanceof 
+               h&amp;&amp;(n=n._wrapped);r instanceof h&amp;&amp;(r=r._wrapped);var                                       
+               u=s.call(n);if(u!==s.call(r))return!1;switch(u){case&quot;[object RegExp]&quot;:case&quot;[object         
+               String]&quot;:return&quot;&quot;+n==&quot;&quot;+r;case&quot;[object                                                     
+               Number]&quot;:return+n!=+n?+r!=+r:0==+n?1/+n==1/r:+n==+r;case&quot;[object Date]&quot;:case&quot;[object       
+               Boolean]&quot;:return+n==+r;case&quot;[object Symbol]&quot;:return                                        
+               p.valueOf.call(n)===p.valueOf.call(r)}var o=&quot;[object Array]&quot;===u;if(!o){if(&quot;object&quot;!=typeof
+               n||&quot;object&quot;!=typeof r)return!1;var i=n.constructor,a=r.constructor;if(i!==a&amp;&amp;!(Cn(i)&amp;&amp;i    
+               instanceof i&amp;&amp;Cn(a)&amp;&amp;a instanceof a)&amp;&amp;&quot;constructor&quot;in n&amp;&amp;&quot;constructor&quot;in                   
+               r)return!1}e=e||[];var f=(t=t||[]).length;for(;f--;)if(t[f]===n)return e[f]===r;if(t.push(n
+               ),e.push(r),o){if((f=n.length)!==r.length)return!1;for(;f--                                
+               ;)if(!zn(n[f],r[f],t,e))return!1}else{var c,l=Sn(n);if(f=l.length,Sn(r).length!==f)return!1
+               ;for(;f--;)if(c=l[f],!x(r,c)||!zn(n[c],r[c],t,e))return!1}return                           
+               t.pop(),e.pop(),!0}(n,r,t,e)}function Pn(r){return function(n){return s.call(n)===&quot;[object 
+               &quot;+r+&quot;]&quot;}}var Kn=r||Pn(&quot;Array&quot;);function Ln(n){var r=typeof                                 
+               n;return&quot;function&quot;===r||&quot;object&quot;===r&amp;&amp;!!n}var Vn=Pn(&quot;Arguments&quot;),Cn=Pn(&quot;Function&quot;),Jn=Pn(&quot;S
+               tring&quot;),Un=Pn(&quot;Number&quot;),$n=Pn(&quot;Date&quot;),Gn=Pn(&quot;RegExp&quot;),Hn=Pn(&quot;Error&quot;),Qn=Pn(&quot;Symbol&quot;),Xn=Pn(
+               &quot;Map&quot;),Yn=Pn(&quot;WeakMap&quot;),Zn=Pn(&quot;Set&quot;),nr=Pn(&quot;WeakSet&quot;);!function(){Vn(arguments)||(Vn=functi
+               on(n){return x(n,&quot;callee&quot;)})}();var rr=n.document&amp;&amp;n.document.childNodes;function          
+               tr(n){return Un(n)&amp;&amp;c(n)}function er(n){return!0===n||!1===n||&quot;[object                     
+               Boolean]&quot;===s.call(n)}function ur(n){return n}function or(r){return                        
+               Kn(r)?function(n){return S(n,r)}:w(r)}function ir(r){return r=In({},r),function(n){return  
+               Wn(n,r)}}function ar(n,r){return null==r&amp;&amp;(r=n,n=0),n+Math.floor(Math.random()*(r-         
+               n+1))}&quot;function&quot;!=typeof/./&amp;&amp;&quot;object&quot;!=typeof Int8Array&amp;&amp;&quot;function&quot;!=typeof                
+               rr&amp;&amp;(Cn=function(n){return&quot;function&quot;==typeof n||!1});var fr=Date.now||function(){return(new
+               Date).getTime()},cr={&quot;&amp;&quot;:&quot;&amp;amp;&quot;,&quot;&lt;&quot;:&quot;&amp;lt;&quot;,&quot;&gt;&quot;:&quot;&amp;gt;&quot;,'&quot;':&quot;&amp;quot;&quot;,&quot;'&quot;:&quot;&amp;#x27;&quot;,&quot;`&quot;:&quot;&amp;#x60
+               ;&quot;},lr=Mn(cr);function pr(r){var t=function(n){return                                      
+               r[n]},n=&quot;(?:&quot;+Sn(r).join(&quot;|&quot;)+&quot;)&quot;,e=RegExp(n),u=RegExp(n,&quot;g&quot;);return function(n){return    
+               n=null==n?&quot;&quot;:&quot;&quot;+n,e.test(n)?n.replace(u,t):n}}var sr=pr(cr),vr=pr(lr);var hr=0;var gr=h.tem
+               plateSettings={evaluate:/&lt;%([\s\S]+?)%&gt;/g,interpolate:/&lt;%=([\s\S]+?)%&gt;/g,escape:/&lt;%-       
+               ([\s\S]+?)%&gt;/g},yr=/(.)^/,dr={&quot;'&quot;:&quot;'&quot;,&quot;\\&quot;:&quot;\\&quot;,&quot;\r&quot;:&quot;r&quot;,&quot;\n&quot;:&quot;n&quot;,&quot;\u2028&quot;:&quot;u2028&quot;,&quot;\u2029&quot;
+               :&quot;u2029&quot;},mr=/\\|'|\r|\n|\u2028|\u2029/g,br=function(n){return&quot;\\&quot;+dr[n]};function         
+               jr(n,r){return n._chain?h(r).chain():r}function _r(t){return E(En(t),function(n){var       
+               r=h[n]=t[n];h.prototype[n]=function(){var n=[this._wrapped];return u.apply(n,arguments),jr(
+               this,r.apply(h,n))}}),h}E([&quot;pop&quot;,&quot;push&quot;,&quot;reverse&quot;,&quot;shift&quot;,&quot;sort&quot;,&quot;splice&quot;,&quot;unshift&quot;],functi
+               on(r){var t=e[r];h.prototype[r]=function(){var n=this._wrapped;return                      
+               t.apply(n,arguments),&quot;shift&quot;!==r&amp;&amp;&quot;splice&quot;!==r||0!==n.length||delete                       
+               n[0],jr(this,n)}}),E([&quot;concat&quot;,&quot;join&quot;,&quot;slice&quot;],function(n){var                             
+               r=e[n];h.prototype[n]=function(){return jr(this,r.apply(this._wrapped,arguments))}}),h.prot
+               otype.valueOf=h.prototype.toJSON=h.prototype.value=function(){return                       
+               this._wrapped},h.prototype.toString=function(){return String(this._wrapped)};var wr=_r({def
+               ault:h,VERSION:g,iteratee:m,restArguments:j,each:E,forEach:E,map:N,collect:N,reduce:I,foldl
+               :I,inject:I,reduceRight:T,foldr:T,find:B,detect:B,filter:R,select:R,reject:function(n,r,t){
+               return R(n,mn(b(r)),t)},every:F,all:F,some:q,any:q,contains:D,includes:D,include:D,invoke:W
+               ,pluck:z,where:function(n,r){return R(n,ir(r))},findWhere:function(n,r){return             
+               B(n,ir(r))},max:P,min:function(n,e,r){var t,u,o=1/0,i=1/0;if(null==e||&quot;number&quot;==typeof     
+               e&amp;&amp;&quot;object&quot;!=typeof n[0]&amp;&amp;null!=n)for(var                                                  
+               a=0,f=(n=M(n)?n:On(n)).length;a&lt;f;a++)null!=(t=n[a])&amp;&amp;t&lt;o&amp;&amp;(o=t);else                      
+               e=b(e,r),E(n,function(n,r,t){((u=e(n,r,t))&lt;i||u===1/0&amp;&amp;o===1/0)&amp;&amp;(o=n,i=u)});return        
+               o},shuffle:function(n){return K(n,1/0)},sample:K,sortBy:function(n,e,r){var u=0;return e=b(
+               e,r),z(N(n,function(n,r,t){return{value:n,index:u++,criteria:e(n,r,t)}}).sort(function(n,r)
+               {var t=n.criteria,e=r.criteria;if(t!==e){if(e&lt;t||void 0===t)return 1;if(t&lt;e||void          
+               0===e)return-1}return                                                                      
+               n.index-r.index}),&quot;value&quot;)},groupBy:V,indexBy:C,countBy:J,toArray:function(n){return       
+               n?Kn(n)?f.call(n):Jn(n)?n.match(U):M(n)?N(n,ur):On(n):[]},size:function(n){return null==n?0
+               :M(n)?n.length:Sn(n).length},partition:$,first:G,head:G,take:G,initial:H,last:function(n,r,
+               t){return null==n||n.length&lt;1?null==r?void 0:[]:null==r||t?n[n.length-                     
+               1]:Q(n,Math.max(0,n.length-r))},rest:Q,tail:Q,drop:Q,compact:function(n){return            
+               R(n,Boolean)},flatten:function(n,r){return                                                 
+               X(n,r,!1)},without:Y,uniq:Z,unique:Z,union:nn,intersection:function(n){for(var             
+               r=[],t=arguments.length,e=0,u=O(n);e&lt;u;e++){var o=n[e];if(!D(r,o)){var                     
+               i;for(i=1;i&lt;t&amp;&amp;D(arguments[i],o);i++);i===t&amp;&amp;r.push(o)}}return                             
+               r},difference:rn,unzip:tn,zip:en,object:function(n,r){for(var                              
+               t={},e=0,u=O(n);e&lt;u;e++)r?t[n[e]]=r[e]:t[n[e][0]]=n[e][1];return t},findIndex:on,findLastIn
+               dex:an,sortedIndex:fn,indexOf:ln,lastIndexOf:pn,range:function(n,r,t){null==r&amp;&amp;(r=n||0,n=0)
+               ,t||(t=r&lt;n?-1:1);for(var                                                                   
+               e=Math.max(Math.ceil((r-n)/t),0),u=Array(e),o=0;o&lt;e;o++,n+=t)u[o]=n;return                 
+               u},chunk:function(n,r){if(null==r||r&lt;1)return[];for(var                                    
+               t=[],e=0,u=n.length;e&lt;u;)t.push(f.call(n,e,e+=r));return                                   
+               t},bind:vn,partial:hn,bindAll:gn,memoize:function(e,u){var o=function(n){var               
+               r=o.cache,t=&quot;&quot;+(u?u.apply(this,arguments):n);return                                        
+               x(r,t)||(r[t]=e.apply(this,arguments)),r[t]};return                                        
+               o.cache={},o},delay:yn,defer:dn,throttle:function(t,e,u){var o,i,a,f,c=0;u||(u={});var     
+               l=function(){c=!1===u.leading?0:fr(),o=null,f=t.apply(i,a),o||(i=a=null)},n=function(){var 
+               n=fr();c||!1!==u.leading||(c=n);var r=e-(n-c);return i=this,a=arguments,r&lt;=0||e&lt;r?(o&amp;&amp;(clea
+               rTimeout(o),o=null),c=n,f=t.apply(i,a),o||(i=a=null)):o||!1===u.trailing||(o=setTimeout(l,r
+               )),f};return                                                                               
+               n.cancel=function(){clearTimeout(o),c=0,o=i=a=null},n},debounce:function(t,e,u){var o,i,a=f
+               unction(n,r){o=null,r&amp;&amp;(i=t.apply(n,r))},n=j(function(n){if(o&amp;&amp;clearTimeout(o),u){var      
+               r=!o;o=setTimeout(a,e),r&amp;&amp;(i=t.apply(this,n))}else o=yn(a,e,this,n);return i});return      
+               n.cancel=function(){clearTimeout(o),o=null},n},wrap:function(n,r){return                   
+               hn(r,n)},negate:mn,compose:function(){var t=arguments,e=t.length-1;return                  
+               function(){for(var n=e,r=t[e].apply(this,arguments);n--;)r=t[n].call(this,r);return        
+               r}},after:function(n,r){return function(){if(--n&lt;1)return r.apply(this,arguments)}},before:
+               bn,once:jn,keys:Sn,allKeys:An,values:On,mapObject:function(n,r,t){r=b(r,t);for(var         
+               e=Sn(n),u=e.length,o={},i=0;i&lt;u;i++){var a=e[i];o[a]=r(n[a],a,n)}return                    
+               o},pairs:function(n){for(var                                                               
+               r=Sn(n),t=r.length,e=Array(t),u=0;u&lt;t;u++)e[u]=[r[u],n[r[u]]];return e},invert:Mn,functions
+               :En,methods:En,extend:kn,extendOwn:In,assign:In,findKey:Tn,pick:Rn,omit:Fn,defaults:qn,crea
+               te:function(n,r){var t=_(n);return r&amp;&amp;In(t,r),t},clone:Dn,tap:function(n,r){return         
+               r(n),n},isMatch:Wn,isEqual:function(n,r){return zn(n,r)},isEmpty:function(n){return null==n
+               ||(M(n)&amp;&amp;(Kn(n)||Jn(n)||Vn(n))?0===n.length:0===Sn(n).length)},isElement:function(n){return
+               !(!n||1!==n.nodeType)},isArray:Kn,isObject:Ln,isArguments:Vn,isFunction:Cn,isString:Jn,isNu
+               mber:Un,isDate:$n,isRegExp:Gn,isError:Hn,isSymbol:Qn,isMap:Xn,isWeakMap:Yn,isSet:Zn,isWeakS
+               et:nr,isFinite:function(n){return!Qn(n)&amp;&amp;l(n)&amp;&amp;!c(parseFloat(n))},isNaN:tr,isBoolean:er,isN
+               ull:function(n){return null===n},isUndefined:function(n){return void                       
+               0===n},has:function(n,r){if(!Kn(r))return x(n,r);for(var t=r.length,e=0;e&lt;t;e++){var u=r[e]
+               ;if(null==n||!o.call(n,u))return!1;n=n[u]}return!!t},identity:ur,constant:function(n){retur
+               n function(){return n}},noop:function(){},property:or,propertyOf:function(r){return        
+               null==r?function(){}:function(n){return                                                    
+               Kn(n)?S(r,n):r[n]}},matcher:ir,matches:ir,times:function(n,r,t){var                        
+               e=Array(Math.max(0,n));r=y(r,t,1);for(var u=0;u&lt;n;u++)e[u]=r(u);return                     
+               e},random:ar,now:fr,escape:sr,unescape:vr,result:function(n,r,t){Kn(r)||(r=[r]);var        
+               e=r.length;if(!e)return Cn(t)?t.call(n):t;for(var u=0;u&lt;e;u++){var o=null==n?void          
+               0:n[r[u]];void 0===o&amp;&amp;(o=t,u=e),n=Cn(o)?o.call(n):o}return n},uniqueId:function(n){var     
+               r=++hr+&quot;&quot;;return n?n+r:r},templateSettings:gr,template:function(o,n,r){!n&amp;&amp;r&amp;&amp;(n=r),n=qn({}
+               ,n,h.templateSettings);var t,e=RegExp([(n.escape||yr).source,(n.interpolate||yr).source,(n.
+               evaluate||yr).source].join(&quot;|&quot;)+&quot;|$&quot;,&quot;g&quot;),i=0,a=&quot;__p+='&quot;;o.replace(e,function(n,r,t,e,u){re
+               turn a+=o.slice(i,u).replace(mr,br),i=u+n.length,r?a+=&quot;'+\n((__t=(&quot;+r+&quot;))==null?'':_.escape
+               (__t))+\n'&quot;:t?a+=&quot;'+\n((__t=(&quot;+t+&quot;))==null?'':__t)+\n'&quot;:e&amp;&amp;(a+=&quot;';\n&quot;+e+&quot;\n__p+='&quot;),n}),a+=
+               &quot;';\n&quot;,n.variable||(a=&quot;with(obj||{}){\n&quot;+a+&quot;}\n&quot;),a=&quot;var __t,__p='',__j=Array.prototype.joi
+               n,&quot;+&quot;print=function(){__p+=__j.call(arguments,'');};\n&quot;+a+&quot;return __p;\n&quot;;try{t=new        
+               Function(n.variable||&quot;obj&quot;,&quot;_&quot;,a)}catch(n){throw n.source=a,n}var u=function(n){return     
+               t.call(this,n,h)},f=n.variable||&quot;obj&quot;;return                                               
+               u.source=&quot;function(&quot;+f+&quot;){\n&quot;+a+&quot;}&quot;,u},chain:function(n){var r=h(n);return                 
+               r._chain=!0,r},mixin:_r});return wr._=wr});                                                
+                                                                                                           
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/target/classes/webgoat/static/js/libs/mode-java.js</span>
+    ❯❱ <span style="font-weight:bold;">gitlab.nodejs_scan.javascript-dos-rule-regex_dos</span>
+          Ensure that the regex used to compare with user supplied input is safe from regular expression
+          denial of service.                                                                            
+          Details: https://sg.run/JDyEZ                                                                 
+                                                                                                        
+          534┆ if (! /^\s+$/.test(line))
+            ⋮┆----------------------------------------
+          685┆ line = session.getLine(row);
+          686┆ var m = re.exec(line);
+                                                                                                                
+  <span style="color:aqua;">  /mnt/c/Users/USER/Downloads/WebGoat-1/target/classes/webgoat/static/js/libs/underscore-min.js</span>
+    ❯❱ <span style="font-weight:bold;">gitlab.nodejs_scan.javascript-crypto-rule-node_insecure_random_generator</span>
+          This rule identifies use of cryptographically weak random number generators. Using cryptographically
+          weak random number generators like `crypto.pseudoRandomBytes()`  and `Math.random()` for security-  
+          critical tasks can expose systems to significant  vulnerabilities. Attackers might predict the      
+          generated random numbers, compromising  the integrity and confidentiality of cryptographic          
+          operations. This could lead to  breaches where sensitive data is accessed or manipulated,           
+          authentication mechanisms  are bypassed, or secure communications are intercepted, ultimately       
+          undermining the  security of the entire system or application.                                      
+                                                                                                              
+          Mitigation strategy: Replace the use of these cryptographically weak random number generators with  
+          `crypto.randomBytes()`, a method provided by Node.js's `crypto` module that  generates              
+          cryptographically secure random numbers. This method should be used  for all operations requiring   
+          secure randomness, such as generating keys, tokens,  or any cryptographic material.                 
+                                                                                                              
+          Secure Code Example: ``` const crypto = require('crypto'); const secureBytes =                      
+          crypto.randomBytes(256); console.log(`Secure random bytes: ${secureBytes.toString('hex')}`); ```    
+          Details: https://sg.run/eq7DE                                                                       
+                                                                                                              
+            6┆ var n=&quot;object&quot;==typeof self&amp;&amp;self.self===self&amp;&amp;self||&quot;object&quot;==typeof                      
+               global&amp;&amp;global.global===global&amp;&amp;global||Function(&quot;return                                   
+               this&quot;)()||{},e=Array.prototype,i=Object.prototype,p=&quot;undefined&quot;!=typeof Symbol?Symbol.proto
+               type:null,u=e.push,f=e.slice,s=i.toString,o=i.hasOwnProperty,r=Array.isArray,a=Object.keys,
+               t=Object.create,c=n.isNaN,l=n.isFinite,v=function(){};function h(n){return n instanceof    
+               h?n:this instanceof h?void(this._wrapped=n):new h(n)}var g=h.VERSION=&quot;1.10.2&quot;;function     
+               y(u,o,n){if(void 0===o)return u;switch(null==n?3:n){case 1:return function(n){return       
+               u.call(o,n)};case 3:return function(n,r,t){return u.call(o,n,r,t)};case 4:return           
+               function(n,r,t,e){return u.call(o,n,r,t,e)}}return function(){return                       
+               u.apply(o,arguments)}}function d(n,r,t){return                                             
+               null==n?ur:Cn(n)?y(n,r,t):Ln(n)&amp;&amp;!Kn(n)?ir(n):or(n)}function m(n,r){return                 
+               d(n,r,1/0)}function b(n,r,t){return h.iteratee!==m?h.iteratee(n,r):d(n,r,t)}function       
+               j(u,o){return o=null==o?u.length-1:+o,function(){for(var                                   
+               n=Math.max(arguments.length-o,0),r=Array(n),t=0;t&lt;n;t++)r[t]=arguments[t+o];switch(o){case 
+               0:return u.call(this,r);case 1:return u.call(this,arguments[0],r);case 2:return            
+               u.call(this,arguments[0],arguments[1],r)}var                                               
+               e=Array(o+1);for(t=0;t&lt;o;t++)e[t]=arguments[t];return e[o]=r,u.apply(this,e)}}function     
+               _(n){if(!Ln(n))return{};if(t)return t(n);v.prototype=n;var r=new v;return                  
+               v.prototype=null,r}function w(r){return function(n){return null==n?void 0:n[r]}}function   
+               x(n,r){return null!=n&amp;&amp;o.call(n,r)}function S(n,r){for(var                                 
+               t=r.length,e=0;e&lt;t;e++){if(null==n)return;n=n[r[e]]}return t?n:void 0}h.iteratee=m;var     
+               A=Math.pow(2,53)-1,O=w(&quot;length&quot;);function M(n){var r=O(n);return&quot;number&quot;==typeof           
+               r&amp;&amp;0&lt;=r&amp;&amp;r&lt;=A}function E(n,r,t){var                                                        
+               e,u;if(r=y(r,t),M(n))for(e=0,u=n.length;e&lt;u;e++)r(n[e],e,n);else{var                       
+               o=Sn(n);for(e=0,u=o.length;e&lt;u;e++)r(n[o[e]],o[e],n)}return n}function                     
+               N(n,r,t){r=b(r,t);for(var e=!M(n)&amp;&amp;Sn(n),u=(e||n).length,o=Array(u),i=0;i&lt;u;i++){var       
+               a=e?e[i]:i;o[i]=r(n[a],a,n)}return o}function k(f){return function(n,r,t,e){var            
+               u=3&lt;=arguments.length;return function(n,r,t,e){var                                         
+               u=!M(n)&amp;&amp;Sn(n),o=(u||n).length,i=0&lt;f?0:o-1;for(e||(t=n[u?u[i]:i],i+=f);0&lt;=i&amp;&amp;i&lt;o;i+=f){var 
+               a=u?u[i]:i;t=r(t,n[a],a,n)}return t}(n,y(r,e,4),t,u)}}var I=k(1),T=k(-1);function          
+               B(n,r,t){var e=(M(n)?on:Tn)(n,r,t);if(void 0!==e&amp;&amp;-1!==e)return n[e]}function R(n,e,r){var 
+               u=[];return e=b(e,r),E(n,function(n,r,t){e(n,r,t)&amp;&amp;u.push(n)}),u}function                  
+               F(n,r,t){r=b(r,t);for(var e=!M(n)&amp;&amp;Sn(n),u=(e||n).length,o=0;o&lt;u;o++){var                  
+               i=e?e[o]:o;if(!r(n[i],i,n))return!1}return!0}function q(n,r,t){r=b(r,t);for(var            
+               e=!M(n)&amp;&amp;Sn(n),u=(e||n).length,o=0;o&lt;u;o++){var                                            
+               i=e?e[o]:o;if(r(n[i],i,n))return!0}return!1}function D(n,r,t,e){return                     
+               M(n)||(n=On(n)),(&quot;number&quot;!=typeof t||e)&amp;&amp;(t=0),0&lt;=ln(n,r,t)}var W=j(function(n,t,e){var    
+               u,o;return Cn(t)?o=t:Kn(t)&amp;&amp;(u=t.slice(0,-1),t=t[t.length-1]),N(n,function(n){var          
+               r=o;if(!r){if(u&amp;&amp;u.length&amp;&amp;(n=S(n,u)),null==n)return;r=n[t]}return                         
+               null==r?r:r.apply(n,e)})});function z(n,r){return N(n,or(r))}function P(n,e,r){var         
+               t,u,o=-1/0,i=-1/0;if(null==e||&quot;number&quot;==typeof e&amp;&amp;&quot;object&quot;!=typeof n[0]&amp;&amp;null!=n)for(var   
+               a=0,f=(n=M(n)?n:On(n)).length;a&lt;f;a++)null!=(t=n[a])&amp;&amp;o&lt;t&amp;&amp;(o=t);else                      
+               e=b(e,r),E(n,function(n,r,t){u=e(n,r,t),(i&lt;u||u===-1/0&amp;&amp;o===-1/0)&amp;&amp;(o=n,i=u)});return      
+               o}function K(n,r,t){if(null==r||t)return M(n)||(n=On(n)),n[ar(n.length-1)];var             
+               e=M(n)?Dn(n):On(n),u=O(e);r=Math.max(Math.min(r,u),0);for(var o=u-1,i=0;i&lt;r;i++){var       
+               a=ar(i,o),f=e[i];e[i]=e[a],e[a]=f}return e.slice(0,r)}function L(i,r){return               
+               function(e,u,n){var o=r?[[],[]]:{};return u=b(u,n),E(e,function(n,r){var                   
+               t=u(n,r,e);i(o,n,t)}),o}}var V=L(function(n,r,t){x(n,t)?n[t].push(r):n[t]=[r]}),C=L(functio
+               n(n,r,t){n[t]=r}),J=L(function(n,r,t){x(n,t)?n[t]++:n[t]=1}),U=/[^\ud800-\udfff]|[\ud800-  
+               \udbff][\udc00-\udfff]|[\ud800-\udfff]/g;var                                               
+               $=L(function(n,r,t){n[t?0:1].push(r)},!0);function G(n,r,t){return                         
+               null==n||n.length&lt;1?null==r?void 0:[]:null==r||t?n[0]:H(n,n.length-r)}function             
+               H(n,r,t){return f.call(n,0,Math.max(0,n.length-(null==r||t?1:r)))}function Q(n,r,t){return 
+               f.call(n,null==r||t?1:r)}function X(n,r,t,e){for(var                                       
+               u=(e=e||[]).length,o=0,i=O(n);o&lt;i;o++){var a=n[o];if(M(a)&amp;&amp;(Kn(a)||Vn(a)))if(r)for(var     
+               f=0,c=a.length;f&lt;c;)e[u++]=a[f++];else X(a,r,t,e),u=e.length;else t||(e[u++]=a)}return     
+               e}var Y=j(function(n,r){return rn(n,r)});function                                          
+               Z(n,r,t,e){er(r)||(e=t,t=r,r=!1),null!=t&amp;&amp;(t=b(t,e));for(var                               
+               u=[],o=[],i=0,a=O(n);i&lt;a;i++){var f=n[i],c=t?t(f,i,n):f;r&amp;&amp;!t?(i&amp;&amp;o===c||u.push(f),o=c):t?D
+               (o,c)||(o.push(c),u.push(f)):D(u,f)||u.push(f)}return u}var nn=j(function(n){return        
+               Z(X(n,!0,!0))});var rn=j(function(n,r){return                                              
+               r=X(r,!0,!0),R(n,function(n){return!D(r,n)})});function tn(n){for(var                      
+               r=n&amp;&amp;P(n,O).length||0,t=Array(r),e=0;e&lt;r;e++)t[e]=z(n,e);return t}var en=j(tn);function    
+               un(o){return function(n,r,t){r=b(r,t);for(var                                              
+               e=O(n),u=0&lt;o?0:e-1;0&lt;=u&amp;&amp;u&lt;e;u+=o)if(r(n[u],u,n))return u;return-1}}var                    
+               on=un(1),an=un(-1);function fn(n,r,t,e){for(var u=(t=b(t,e,1))(r),o=0,i=O(n);o&lt;i;){var     
+               a=Math.floor((o+i)/2);t(n[a])&lt;u?o=a+1:i=a}return o}function cn(o,i,a){return               
+               function(n,r,t){var e=0,u=O(n);if(&quot;number&quot;==typeof                                         
+               t)0&lt;o?e=0&lt;=t?t:Math.max(t+u,e):u=0&lt;=t?Math.min(t+1,u):t+u+1;else if(a&amp;&amp;t&amp;&amp;u)return         
+               n[t=a(n,r)]===r?t:-1;if(r!=r)return                                                        
+               0&lt;=(t=i(f.call(n,e,u),tr))?t+e:-1;for(t=0&lt;o?e:u-1;0&lt;=t&amp;&amp;t&lt;u;t+=o)if(n[t]===r)return        
+               t;return-1}}var ln=cn(1,on,fn),pn=cn(-1,an);function sn(n,r,t,e,u){if(!(e instanceof       
+               r))return n.apply(t,u);var o=_(n.prototype),i=n.apply(o,u);return Ln(i)?i:o}var            
+               vn=j(function(r,t,e){if(!Cn(r))throw new TypeError(&quot;Bind must be called on a function&quot;);var
+               u=j(function(n){return sn(r,u,t,this,e.concat(n))});return u}),hn=j(function(u,o){var      
+               i=hn.placeholder,a=function(){for(var n=0,r=o.length,t=Array(r),e=0;e&lt;r;e++)t[e]=o[e]===i?a
+               rguments[n++]:o[e];for(;n&lt;arguments.length;)t.push(arguments[n++]);return                  
+               sn(u,a,this,this,t)};return a});hn.placeholder=h;var gn=j(function(n,r){var                
+               t=(r=X(r,!1,!1)).length;if(t&lt;1)throw new Error(&quot;bindAll must be passed function            
+               names&quot;);for(;t--;){var e=r[t];n[e]=vn(n[e],n)}});var yn=j(function(n,r,t){return           
+               setTimeout(function(){return n.apply(null,t)},r)}),dn=hn(yn,h,1);function mn(n){return     
+               function(){return!n.apply(this,arguments)}}function bn(n,r){var t;return function(){return 
+               0&lt;--n&amp;&amp;(t=r.apply(this,arguments)),n&lt;=1&amp;&amp;(r=null),t}}var jn=hn(bn,2),_n=!{toString:null}.pr
+               opertyIsEnumerable(&quot;toString&quot;),wn=[&quot;valueOf&quot;,&quot;isPrototypeOf&quot;,&quot;toString&quot;,&quot;propertyIsEnumerab
+               le&quot;,&quot;hasOwnProperty&quot;,&quot;toLocaleString&quot;];function xn(n,r){var t=wn.length,e=n.constructor,u=C
+               n(e)&amp;&amp;e.prototype||i,o=&quot;constructor&quot;;for(x(n,o)&amp;&amp;!D(r,o)&amp;&amp;r.push(o);t--;)(o=wn[t])in       
+               n&amp;&amp;n[o]!==u[o]&amp;&amp;!D(r,o)&amp;&amp;r.push(o)}function Sn(n){if(!Ln(n))return[];if(a)return a(n);var  
+               r=[];for(var t in n)x(n,t)&amp;&amp;r.push(t);return _n&amp;&amp;xn(n,r),r}function                        
+               An(n){if(!Ln(n))return[];var r=[];for(var t in n)r.push(t);return _n&amp;&amp;xn(n,r),r}function   
+               On(n){for(var r=Sn(n),t=r.length,e=Array(t),u=0;u&lt;t;u++)e[u]=n[r[u]];return e}function     
+               Mn(n){for(var r={},t=Sn(n),e=0,u=t.length;e&lt;u;e++)r[n[t[e]]]=t[e];return r}function        
+               En(n){var r=[];for(var t in n)Cn(n[t])&amp;&amp;r.push(t);return r.sort()}function Nn(f,c){return  
+               function(n){var r=arguments.length;if(c&amp;&amp;(n=Object(n)),r&lt;2||null==n)return n;for(var       
+               t=1;t&lt;r;t++)for(var e=arguments[t],u=f(e),o=u.length,i=0;i&lt;o;i++){var a=u[i];c&amp;&amp;void       
+               0!==n[a]||(n[a]=e[a])}return n}}var kn=Nn(An),In=Nn(Sn);function Tn(n,r,t){r=b(r,t);for(var
+               e,u=Sn(n),o=0,i=u.length;o&lt;i;o++)if(r(n[e=u[o]],e,n))return e}function Bn(n,r,t){return r  
+               in t}var Rn=j(function(n,r){var t={},e=r[0];if(null==n)return                              
+               t;Cn(e)?(1&lt;r.length&amp;&amp;(e=y(e,r[1])),r=An(n)):(e=Bn,r=X(r,!1,!1),n=Object(n));for(var        
+               u=0,o=r.length;u&lt;o;u++){var i=r[u],a=n[i];e(a,i,n)&amp;&amp;(t[i]=a)}return                        
+               t}),Fn=j(function(n,t){var r,e=t[0];return Cn(e)?(e=mn(e),1&lt;t.length&amp;&amp;(r=t[1])):(t=N(X(t,!1
+               ,!1),String),e=function(n,r){return!D(t,r)}),Rn(n,e,r)}),qn=Nn(An,!0);function Dn(n){return
+               Ln(n)?Kn(n)?n.slice():kn({},n):n}function Wn(n,r){var                                      
+               t=Sn(r),e=t.length;if(null==n)return!e;for(var u=Object(n),o=0;o&lt;e;o++){var                
+               i=t[o];if(r[i]!==u[i]||!(i in u))return!1}return!0}function zn(n,r,t,e){if(n===r)return    
+               0!==n||1/n==1/r;if(null==n||null==r)return!1;if(n!=n)return r!=r;var u=typeof              
+               n;return(&quot;function&quot;===u||&quot;object&quot;===u||&quot;object&quot;==typeof r)&amp;&amp;function(n,r,t,e){n instanceof 
+               h&amp;&amp;(n=n._wrapped);r instanceof h&amp;&amp;(r=r._wrapped);var                                       
+               u=s.call(n);if(u!==s.call(r))return!1;switch(u){case&quot;[object RegExp]&quot;:case&quot;[object         
+               String]&quot;:return&quot;&quot;+n==&quot;&quot;+r;case&quot;[object                                                     
+               Number]&quot;:return+n!=+n?+r!=+r:0==+n?1/+n==1/r:+n==+r;case&quot;[object Date]&quot;:case&quot;[object       
+               Boolean]&quot;:return+n==+r;case&quot;[object Symbol]&quot;:return                                        
+               p.valueOf.call(n)===p.valueOf.call(r)}var o=&quot;[object Array]&quot;===u;if(!o){if(&quot;object&quot;!=typeof
+               n||&quot;object&quot;!=typeof r)return!1;var i=n.constructor,a=r.constructor;if(i!==a&amp;&amp;!(Cn(i)&amp;&amp;i    
+               instanceof i&amp;&amp;Cn(a)&amp;&amp;a instanceof a)&amp;&amp;&quot;constructor&quot;in n&amp;&amp;&quot;constructor&quot;in                   
+               r)return!1}e=e||[];var f=(t=t||[]).length;for(;f--;)if(t[f]===n)return e[f]===r;if(t.push(n
+               ),e.push(r),o){if((f=n.length)!==r.length)return!1;for(;f--                                
+               ;)if(!zn(n[f],r[f],t,e))return!1}else{var c,l=Sn(n);if(f=l.length,Sn(r).length!==f)return!1
+               ;for(;f--;)if(c=l[f],!x(r,c)||!zn(n[c],r[c],t,e))return!1}return                           
+               t.pop(),e.pop(),!0}(n,r,t,e)}function Pn(r){return function(n){return s.call(n)===&quot;[object 
+               &quot;+r+&quot;]&quot;}}var Kn=r||Pn(&quot;Array&quot;);function Ln(n){var r=typeof                                 
+               n;return&quot;function&quot;===r||&quot;object&quot;===r&amp;&amp;!!n}var Vn=Pn(&quot;Arguments&quot;),Cn=Pn(&quot;Function&quot;),Jn=Pn(&quot;S
+               tring&quot;),Un=Pn(&quot;Number&quot;),$n=Pn(&quot;Date&quot;),Gn=Pn(&quot;RegExp&quot;),Hn=Pn(&quot;Error&quot;),Qn=Pn(&quot;Symbol&quot;),Xn=Pn(
+               &quot;Map&quot;),Yn=Pn(&quot;WeakMap&quot;),Zn=Pn(&quot;Set&quot;),nr=Pn(&quot;WeakSet&quot;);!function(){Vn(arguments)||(Vn=functi
+               on(n){return x(n,&quot;callee&quot;)})}();var rr=n.document&amp;&amp;n.document.childNodes;function          
+               tr(n){return Un(n)&amp;&amp;c(n)}function er(n){return!0===n||!1===n||&quot;[object                     
+               Boolean]&quot;===s.call(n)}function ur(n){return n}function or(r){return                        
+               Kn(r)?function(n){return S(n,r)}:w(r)}function ir(r){return r=In({},r),function(n){return  
+               Wn(n,r)}}function ar(n,r){return null==r&amp;&amp;(r=n,n=0),n+Math.floor(Math.random()*(r-         
+               n+1))}&quot;function&quot;!=typeof/./&amp;&amp;&quot;object&quot;!=typeof Int8Array&amp;&amp;&quot;function&quot;!=typeof                
+               rr&amp;&amp;(Cn=function(n){return&quot;function&quot;==typeof n||!1});var fr=Date.now||function(){return(new
+               Date).getTime()},cr={&quot;&amp;&quot;:&quot;&amp;amp;&quot;,&quot;&lt;&quot;:&quot;&amp;lt;&quot;,&quot;&gt;&quot;:&quot;&amp;gt;&quot;,'&quot;':&quot;&amp;quot;&quot;,&quot;'&quot;:&quot;&amp;#x27;&quot;,&quot;`&quot;:&quot;&amp;#x60
+               ;&quot;},lr=Mn(cr);function pr(r){var t=function(n){return                                      
+               r[n]},n=&quot;(?:&quot;+Sn(r).join(&quot;|&quot;)+&quot;)&quot;,e=RegExp(n),u=RegExp(n,&quot;g&quot;);return function(n){return    
+               n=null==n?&quot;&quot;:&quot;&quot;+n,e.test(n)?n.replace(u,t):n}}var sr=pr(cr),vr=pr(lr);var hr=0;var gr=h.tem
+               plateSettings={evaluate:/&lt;%([\s\S]+?)%&gt;/g,interpolate:/&lt;%=([\s\S]+?)%&gt;/g,escape:/&lt;%-       
+               ([\s\S]+?)%&gt;/g},yr=/(.)^/,dr={&quot;'&quot;:&quot;'&quot;,&quot;\\&quot;:&quot;\\&quot;,&quot;\r&quot;:&quot;r&quot;,&quot;\n&quot;:&quot;n&quot;,&quot;\u2028&quot;:&quot;u2028&quot;,&quot;\u2029&quot;
+               :&quot;u2029&quot;},mr=/\\|'|\r|\n|\u2028|\u2029/g,br=function(n){return&quot;\\&quot;+dr[n]};function         
+               jr(n,r){return n._chain?h(r).chain():r}function _r(t){return E(En(t),function(n){var       
+               r=h[n]=t[n];h.prototype[n]=function(){var n=[this._wrapped];return u.apply(n,arguments),jr(
+               this,r.apply(h,n))}}),h}E([&quot;pop&quot;,&quot;push&quot;,&quot;reverse&quot;,&quot;shift&quot;,&quot;sort&quot;,&quot;splice&quot;,&quot;unshift&quot;],functi
+               on(r){var t=e[r];h.prototype[r]=function(){var n=this._wrapped;return                      
+               t.apply(n,arguments),&quot;shift&quot;!==r&amp;&amp;&quot;splice&quot;!==r||0!==n.length||delete                       
+               n[0],jr(this,n)}}),E([&quot;concat&quot;,&quot;join&quot;,&quot;slice&quot;],function(n){var                             
+               r=e[n];h.prototype[n]=function(){return jr(this,r.apply(this._wrapped,arguments))}}),h.prot
+               otype.valueOf=h.prototype.toJSON=h.prototype.value=function(){return                       
+               this._wrapped},h.prototype.toString=function(){return String(this._wrapped)};var wr=_r({def
+               ault:h,VERSION:g,iteratee:m,restArguments:j,each:E,forEach:E,map:N,collect:N,reduce:I,foldl
+               :I,inject:I,reduceRight:T,foldr:T,find:B,detect:B,filter:R,select:R,reject:function(n,r,t){
+               return R(n,mn(b(r)),t)},every:F,all:F,some:q,any:q,contains:D,includes:D,include:D,invoke:W
+               ,pluck:z,where:function(n,r){return R(n,ir(r))},findWhere:function(n,r){return             
+               B(n,ir(r))},max:P,min:function(n,e,r){var t,u,o=1/0,i=1/0;if(null==e||&quot;number&quot;==typeof     
+               e&amp;&amp;&quot;object&quot;!=typeof n[0]&amp;&amp;null!=n)for(var                                                  
+               a=0,f=(n=M(n)?n:On(n)).length;a&lt;f;a++)null!=(t=n[a])&amp;&amp;t&lt;o&amp;&amp;(o=t);else                      
+               e=b(e,r),E(n,function(n,r,t){((u=e(n,r,t))&lt;i||u===1/0&amp;&amp;o===1/0)&amp;&amp;(o=n,i=u)});return        
+               o},shuffle:function(n){return K(n,1/0)},sample:K,sortBy:function(n,e,r){var u=0;return e=b(
+               e,r),z(N(n,function(n,r,t){return{value:n,index:u++,criteria:e(n,r,t)}}).sort(function(n,r)
+               {var t=n.criteria,e=r.criteria;if(t!==e){if(e&lt;t||void 0===t)return 1;if(t&lt;e||void          
+               0===e)return-1}return                                                                      
+               n.index-r.index}),&quot;value&quot;)},groupBy:V,indexBy:C,countBy:J,toArray:function(n){return       
+               n?Kn(n)?f.call(n):Jn(n)?n.match(U):M(n)?N(n,ur):On(n):[]},size:function(n){return null==n?0
+               :M(n)?n.length:Sn(n).length},partition:$,first:G,head:G,take:G,initial:H,last:function(n,r,
+               t){return null==n||n.length&lt;1?null==r?void 0:[]:null==r||t?n[n.length-                     
+               1]:Q(n,Math.max(0,n.length-r))},rest:Q,tail:Q,drop:Q,compact:function(n){return            
+               R(n,Boolean)},flatten:function(n,r){return                                                 
+               X(n,r,!1)},without:Y,uniq:Z,unique:Z,union:nn,intersection:function(n){for(var             
+               r=[],t=arguments.length,e=0,u=O(n);e&lt;u;e++){var o=n[e];if(!D(r,o)){var                     
+               i;for(i=1;i&lt;t&amp;&amp;D(arguments[i],o);i++);i===t&amp;&amp;r.push(o)}}return                             
+               r},difference:rn,unzip:tn,zip:en,object:function(n,r){for(var                              
+               t={},e=0,u=O(n);e&lt;u;e++)r?t[n[e]]=r[e]:t[n[e][0]]=n[e][1];return t},findIndex:on,findLastIn
+               dex:an,sortedIndex:fn,indexOf:ln,lastIndexOf:pn,range:function(n,r,t){null==r&amp;&amp;(r=n||0,n=0)
+               ,t||(t=r&lt;n?-1:1);for(var                                                                   
+               e=Math.max(Math.ceil((r-n)/t),0),u=Array(e),o=0;o&lt;e;o++,n+=t)u[o]=n;return                 
+               u},chunk:function(n,r){if(null==r||r&lt;1)return[];for(var                                    
+               t=[],e=0,u=n.length;e&lt;u;)t.push(f.call(n,e,e+=r));return                                   
+               t},bind:vn,partial:hn,bindAll:gn,memoize:function(e,u){var o=function(n){var               
+               r=o.cache,t=&quot;&quot;+(u?u.apply(this,arguments):n);return                                        
+               x(r,t)||(r[t]=e.apply(this,arguments)),r[t]};return                                        
+               o.cache={},o},delay:yn,defer:dn,throttle:function(t,e,u){var o,i,a,f,c=0;u||(u={});var     
+               l=function(){c=!1===u.leading?0:fr(),o=null,f=t.apply(i,a),o||(i=a=null)},n=function(){var 
+               n=fr();c||!1!==u.leading||(c=n);var r=e-(n-c);return i=this,a=arguments,r&lt;=0||e&lt;r?(o&amp;&amp;(clea
+               rTimeout(o),o=null),c=n,f=t.apply(i,a),o||(i=a=null)):o||!1===u.trailing||(o=setTimeout(l,r
+               )),f};return                                                                               
+               n.cancel=function(){clearTimeout(o),c=0,o=i=a=null},n},debounce:function(t,e,u){var o,i,a=f
+               unction(n,r){o=null,r&amp;&amp;(i=t.apply(n,r))},n=j(function(n){if(o&amp;&amp;clearTimeout(o),u){var      
+               r=!o;o=setTimeout(a,e),r&amp;&amp;(i=t.apply(this,n))}else o=yn(a,e,this,n);return i});return      
+               n.cancel=function(){clearTimeout(o),o=null},n},wrap:function(n,r){return                   
+               hn(r,n)},negate:mn,compose:function(){var t=arguments,e=t.length-1;return                  
+               function(){for(var n=e,r=t[e].apply(this,arguments);n--;)r=t[n].call(this,r);return        
+               r}},after:function(n,r){return function(){if(--n&lt;1)return r.apply(this,arguments)}},before:
+               bn,once:jn,keys:Sn,allKeys:An,values:On,mapObject:function(n,r,t){r=b(r,t);for(var         
+               e=Sn(n),u=e.length,o={},i=0;i&lt;u;i++){var a=e[i];o[a]=r(n[a],a,n)}return                    
+               o},pairs:function(n){for(var                                                               
+               r=Sn(n),t=r.length,e=Array(t),u=0;u&lt;t;u++)e[u]=[r[u],n[r[u]]];return e},invert:Mn,functions
+               :En,methods:En,extend:kn,extendOwn:In,assign:In,findKey:Tn,pick:Rn,omit:Fn,defaults:qn,crea
+               te:function(n,r){var t=_(n);return r&amp;&amp;In(t,r),t},clone:Dn,tap:function(n,r){return         
+               r(n),n},isMatch:Wn,isEqual:function(n,r){return zn(n,r)},isEmpty:function(n){return null==n
+               ||(M(n)&amp;&amp;(Kn(n)||Jn(n)||Vn(n))?0===n.length:0===Sn(n).length)},isElement:function(n){return
+               !(!n||1!==n.nodeType)},isArray:Kn,isObject:Ln,isArguments:Vn,isFunction:Cn,isString:Jn,isNu
+               mber:Un,isDate:$n,isRegExp:Gn,isError:Hn,isSymbol:Qn,isMap:Xn,isWeakMap:Yn,isSet:Zn,isWeakS
+               et:nr,isFinite:function(n){return!Qn(n)&amp;&amp;l(n)&amp;&amp;!c(parseFloat(n))},isNaN:tr,isBoolean:er,isN
+               ull:function(n){return null===n},isUndefined:function(n){return void                       
+               0===n},has:function(n,r){if(!Kn(r))return x(n,r);for(var t=r.length,e=0;e&lt;t;e++){var u=r[e]
+               ;if(null==n||!o.call(n,u))return!1;n=n[u]}return!!t},identity:ur,constant:function(n){retur
+               n function(){return n}},noop:function(){},property:or,propertyOf:function(r){return        
+               null==r?function(){}:function(n){return                                                    
+               Kn(n)?S(r,n):r[n]}},matcher:ir,matches:ir,times:function(n,r,t){var                        
+               e=Array(Math.max(0,n));r=y(r,t,1);for(var u=0;u&lt;n;u++)e[u]=r(u);return                     
+               e},random:ar,now:fr,escape:sr,unescape:vr,result:function(n,r,t){Kn(r)||(r=[r]);var        
+               e=r.length;if(!e)return Cn(t)?t.call(n):t;for(var u=0;u&lt;e;u++){var o=null==n?void          
+               0:n[r[u]];void 0===o&amp;&amp;(o=t,u=e),n=Cn(o)?o.call(n):o}return n},uniqueId:function(n){var     
+               r=++hr+&quot;&quot;;return n?n+r:r},templateSettings:gr,template:function(o,n,r){!n&amp;&amp;r&amp;&amp;(n=r),n=qn({}
+               ,n,h.templateSettings);var t,e=RegExp([(n.escape||yr).source,(n.interpolate||yr).source,(n.
+               evaluate||yr).source].join(&quot;|&quot;)+&quot;|$&quot;,&quot;g&quot;),i=0,a=&quot;__p+='&quot;;o.replace(e,function(n,r,t,e,u){re
+               turn a+=o.slice(i,u).replace(mr,br),i=u+n.length,r?a+=&quot;'+\n((__t=(&quot;+r+&quot;))==null?'':_.escape
+               (__t))+\n'&quot;:t?a+=&quot;'+\n((__t=(&quot;+t+&quot;))==null?'':__t)+\n'&quot;:e&amp;&amp;(a+=&quot;';\n&quot;+e+&quot;\n__p+='&quot;),n}),a+=
+               &quot;';\n&quot;,n.variable||(a=&quot;with(obj||{}){\n&quot;+a+&quot;}\n&quot;),a=&quot;var __t,__p='',__j=Array.prototype.joi
+               n,&quot;+&quot;print=function(){__p+=__j.call(arguments,'');};\n&quot;+a+&quot;return __p;\n&quot;;try{t=new        
+               Function(n.variable||&quot;obj&quot;,&quot;_&quot;,a)}catch(n){throw n.source=a,n}var u=function(n){return     
+               t.call(this,n,h)},f=n.variable||&quot;obj&quot;;return                                               
+               u.source=&quot;function(&quot;+f+&quot;){\n&quot;+a+&quot;}&quot;,u},chain:function(n){var r=h(n);return                 
+               r._chain=!0,r},mixin:_r});return wr._=wr});                                                
+</pre>
+</body>
+</html>
