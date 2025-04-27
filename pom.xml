@@ -112,6 +112,46 @@
 
   <dependencyManagement>
     <dependencies>
+
+    <!-- changes i add-->
+          <!-- Adding vulnerable dependencies for testing -->
+      <dependency>
+          <groupId>org.apache.struts</groupId>
+          <artifactId>struts2-core</artifactId>
+          <version>2.3.24</version>  <!-- Known vulnerable version -->
+      </dependency>
+
+      <dependency>
+          <groupId>commons-collections</groupId>
+          <artifactId>commons-collections</artifactId>
+          <version>3.2.1</version>  <!-- Vulnerable to deserialization attacks -->
+      </dependency>
+
+      <dependency>
+          <groupId>log4j</groupId>
+          <artifactId>log4j</artifactId>
+          <version>1.2.17</version>  <!-- Vulnerable version -->
+      </dependency>
+      <!-- Jackson Vulnerabilities -->
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-databind</artifactId>
+          <version>2.9.8</version>  <!-- Multiple CVEs including remote code execution -->
+      </dependency>
+
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-core</artifactId>
+          <version>2.9.8</version>  <!-- Pair with the above vulnerable databind -->
+      </dependency>
+
+      <dependency>
+          <groupId>com.fasterxml.jackson.core</groupId>
+          <artifactId>jackson-annotations</artifactId>
+          <version>2.9.8</version>  <!-- Complete the vulnerable Jackson set -->
+      </dependency>
+      <!--finish changes i add-->
+
       <dependency>
         <groupId>org.apache.commons</groupId>
         <artifactId>commons-exec</artifactId>
